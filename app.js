@@ -14,17 +14,16 @@ app.use(logger("dev"));
 // app.use(helmet());
 // app.use(cors);
 
-// json or urlencoded
-// req.body = { menulist }
+// run express
 app.use(express.json());
 
-// POST /samshiseaki/auth/login
-// POST /samshiseaki/auth/register
+// routers
 app.use("/samshiseaki/auth", require("./routes/auth"));
 app.use("/samshiseaki/meal", require("./routes/meal"));
+app.use("/samshiseaki/nth", require("./routes/nth"));
 
 // listening port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Sever is listening on port ${port}`);
+  console.log(`Server is listening on port ${port}`);
 });
