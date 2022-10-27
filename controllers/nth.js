@@ -22,7 +22,7 @@ const mealTime = async (req, res, next) => {
       gradeTime(res, curTime, lunchStart, lunchEnd, "Lunch");
     }
     if (curTime.isBetween(dinnerStart, dinnerEnd)) {
-      gradeTime(res, curTime, testStart, testEnd, "Dinner");
+      gradeTime(res, curTime, dinnerStart, dinnerEnd, "Dinner");
     } else {
       return res.status(200).json({
         ok: true,
