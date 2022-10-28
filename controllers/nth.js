@@ -17,11 +17,9 @@ const mealTime = async (req, res, next) => {
 
     if (curTime.isBetween(breakfastStart, breakfastEnd)) {
       gradeTime(res, curTime, breakfastStart, breakfastEnd, "Breakfast");
-    }
-    if (curTime.isBetween(lunchStart, lunchEnd)) {
+    } else if (curTime.isBetween(lunchStart, lunchEnd)) {
       gradeTime(res, curTime, lunchStart, lunchEnd, "Lunch");
-    }
-    if (curTime.isBetween(dinnerStart, dinnerEnd)) {
+    } else if (curTime.isBetween(dinnerStart, dinnerEnd)) {
       gradeTime(res, curTime, dinnerStart, dinnerEnd, "Dinner");
     } else {
       return res.status(200).json({
