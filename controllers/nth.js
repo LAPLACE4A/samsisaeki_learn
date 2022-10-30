@@ -47,8 +47,7 @@ const gradeTime = (res, cur, start, end, time) => {
         grade: "3rd",
         time: time,
       });
-    }
-    if (end.diff(cur, "minutes") <= duringMeal) {
+    } else if (end.diff(cur, "minutes") <= duringMeal) {
       return res.status(200).json({
         ok: true,
         grade: "1st",
