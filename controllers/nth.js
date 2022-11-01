@@ -6,7 +6,7 @@ const mealTime = async (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
 
     const curTime = moment().milliseconds("0");
-    const breakfastStart = moment().hours("00").minutes("30").seconds("00");
+    const breakfastStart = moment().hours("06").minutes("50").seconds("00");
     const breakfastEnd = moment().hours("07").minutes("50").seconds("00");
     const lunchStart = moment().hours("12").minutes("20").seconds("00");
     const lunchEnd = moment().hours("13").minutes("05").seconds("00");
