@@ -11,13 +11,11 @@ const mealTime = async (req, res, next) => {
     const lunchEnd = moment().hours("13").minutes("05").seconds("00");
     const dinnerStart = moment().hours("18").minutes("20").seconds("00");
     const dinnerEnd = moment().hours("19").minutes("05").seconds("00");
-    const testStart = moment().hours("22").minutes("50").seconds("00");
-    const testEnd = moment().hours("23").minutes("50").seconds("00");
-    console.log(curTime);
+    // const testStart = moment().hours("22").minutes("50").seconds("00");
+    // const testEnd = moment().hours("23").minutes("50").seconds("00");
 
-    if (curTime.isBetween(testStart, testEnd)) {
-      console.log(curTime);
-      gradeTime(res, curTime, testStart, testEnd, "Breakfast");
+    if (curTime.isBetween(breakfastStart, breakfastEnd)) {
+      gradeTime(res, curTime, breakfastStart, breakfastEnd, "Breakfast");
     } else if (curTime.isBetween(lunchStart, lunchEnd)) {
       gradeTime(res, curTime, lunchStart, lunchEnd, "Lunch");
     } else if (curTime.isBetween(dinnerStart, dinnerEnd)) {
@@ -42,8 +40,6 @@ const gradeTime = (res, cur, start, end, time) => {
     } else {
       duringMeal = 15;
     }
-
-    console.log(`duringMeal: ${duringMeal}`);
 
     if (cur.diff(start, "minutes") <= duringMeal) {
       return res.status(200).json({
