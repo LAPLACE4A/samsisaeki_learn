@@ -14,6 +14,7 @@ const mealTime = async (req, res, next) => {
     const dinnerEnd = moment().hours("19").minutes("05").seconds("00");
     const testStart = moment().hours("22").minutes("50").seconds("00");
     const testEnd = moment().hours("23").minutes("50").seconds("00");
+    console.log(curTime);
 
     if (curTime.isBetween(testStart, testEnd)) {
       console.log(curTime);
@@ -26,6 +27,7 @@ const mealTime = async (req, res, next) => {
       return res.status(200).json({
         ok: true,
         msg: "지금은 급식시간이 아닙니다",
+        time: curTime,
       });
     }
   } catch (err) {
