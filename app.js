@@ -3,8 +3,6 @@ const helmet = require("helmet");
 const cors = require("cors");
 const logger = require("morgan");
 const dbConnection = require("./database/config");
-const moment = require("moment-timezone");
-moment.tz.setDefault("Asia/Seoul");
 
 const app = express();
 dbConnection();
