@@ -45,7 +45,7 @@ const gradeTime = (res, cur, start, end, time) => {
     if (cur.diff(start, "minutes") <= duringMeal) {
       return res.status(200).json({
         ok: true,
-        grade: "지금은 3학년 급식시간입니다",
+        msg: "지금은 3학년 급식시간입니다",
         time: time,
       });
     } else if (end.diff(cur, "minutes") <= duringMeal) {
@@ -57,7 +57,7 @@ const gradeTime = (res, cur, start, end, time) => {
     } else {
       return res.status(200).json({
         ok: true,
-        grade: "지금은 2학년 급식시간입니다",
+        msg: "지금은 2학년 급식시간입니다",
         time: time,
       });
     }
