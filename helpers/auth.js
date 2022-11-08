@@ -12,4 +12,6 @@ const emailExists = async (req, res, next) => {
   next();
 };
 
-module.exports = emailExists;
+module.exports = {
+  emailExists,
+};
