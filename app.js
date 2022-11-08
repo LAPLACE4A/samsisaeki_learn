@@ -47,7 +47,6 @@ cron.schedule("0 0 * * 1", async () => {
 app.use("/samshiseaki/auth", require("./routes/auth"));
 app.use("/samshiseaki/meal", require("./routes/meal"));
 app.use("/samshiseaki/nth", require("./routes/nth"));
-app.use("/samshiseaki/teacher", require("./routes/teacher"));
 
 // listening port
 const port = process.env.PORT || 3000;
