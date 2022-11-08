@@ -68,5 +68,4 @@ const gradeTime = (res, cur, start, end, time) => {
 
 module.exports = {
   mealTime,
-  gradeTime,
 };
