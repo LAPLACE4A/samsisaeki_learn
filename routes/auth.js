@@ -31,7 +31,7 @@ router.post(
 router.post(
   "/login",
   [
-    check("email", "이메일을 입력해주세요.").isEmail(),
+    // check("email", "이메일을 입력해주세요.").isEmail(),
     check("password", "비밀번호를 입력해주세요").not().isEmpty(),
     validateFields,
   ],
